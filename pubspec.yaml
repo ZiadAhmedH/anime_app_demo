@@ -1,0 +1,30 @@
+name: anime_app_demo
+description: "anime app + implement clean arc concepts"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10+1
+  flutter_bloc: ^9.1.1
+  bloc: ^9.0.0
+  logger: ^2.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/chars/
+    - assets/posters/
+    - assets/objects/

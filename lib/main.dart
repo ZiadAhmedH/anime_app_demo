@@ -1,3 +1,4 @@
+import 'package:anime_app_demo/features/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,15 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Anime App',
-      home:  Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo Home Page'),
-        ),
-
-        body: const Center(
-          child: Text('Hello, World!'),
-        ),
-      ),
+      home:  HomeView(),
     );
   }
 }

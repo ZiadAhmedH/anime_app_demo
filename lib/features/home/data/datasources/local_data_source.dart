@@ -12,31 +12,25 @@ class AnimeLocalDataSourceImpl implements AnimeLocalDataSource {
   @override
   Future<List<AnimeModel>> getAnimesList() async {
     return [
-      AnimeModel(
-        id: '1',
-        title: 'Naruto',
-        poster: 'assets/posters/naruto.svg',
-        description: 'Naruto Uzumaki, a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village.',
-        rating: 8.5,
-      ),
+      
       AnimeModel(
         id: '2',
         title: "Hunter x Hunter",
-        poster: 'assets/posters/hunter.svg',
+        poster: 'assets/posters/hunter.png',
         description: 'Gon Freecss aspires to become a Hunter, an exceptional being capable of greatness. With his friends, he embarks on a journey filled with challenges and adventures.',
         rating: 9.0,
       ),
       AnimeModel(
         id: '3',
         title: 'Conan the Detective',
-        poster: 'assets/posters/conan.svg',
+        poster: 'assets/posters/conan.png',
         description: 'In a world where humanity resides within enormous walled cities to protect themselves from Titans, gigantic humanoid creatures, Eren Yeager joins the military to fight them after his hometown is destroyed.',
         rating: 9.1,
       ),
       AnimeModel(
         id: '4',
         title: "Dragon Ball Z",
-        poster: 'assets/posters/dragon.svg',
+        poster: 'assets/posters/dragon.png',
         description: 'Goku and his friends defend the Earth against an assortment of villains ranging from intergalactic space fighters and conquerors, unnaturally powerful androids, and nearly indestructible creatures.',
         rating: 8.7,
       ),

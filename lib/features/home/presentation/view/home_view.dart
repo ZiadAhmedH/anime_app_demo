@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: BlocProvider(
-          create: (context) => sl<AnimeCubit>()..fetchPopularAnimes(),
+          create: (context) => sl<AnimeCubit>()..fetchPopularAnimes()..fetchTopCharacters(),
           child: HomeBodyView(),
         ),
       ),

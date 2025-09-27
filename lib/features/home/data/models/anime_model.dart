@@ -5,6 +5,7 @@ class AnimeModel {
   final String title;
   final String description;
   final String poster;
+  final String genre;
   final double rating;
 
   AnimeModel({
@@ -12,6 +13,7 @@ class AnimeModel {
     required this.title,
     required this.description,
     required this.poster,
+    required this.genre,
     required this.rating,
   });
 
@@ -21,6 +23,7 @@ class AnimeModel {
       title: json['title'] ?? '',
       description: json['description'] ?? '',
       poster: json['poster'] ?? '',
+      genre: json['genre'] ?? '', 
       rating: (json['rating'] as num).toDouble(),
     );
   }
@@ -29,6 +32,7 @@ class AnimeModel {
     return Anime(
       title: title,
       poster: poster,
+      genre: genre,
       rating: rating,
     );
   }

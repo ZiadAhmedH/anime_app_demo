@@ -1,7 +1,9 @@
 import 'package:anime_app_demo/core/utils/app_colors.dart';
 import 'package:anime_app_demo/core/widgets/text_widget.dart';
-import 'package:anime_app_demo/features/home/presentation/view/body_view/sections/anime_list_section.dart' show AnimeListSection;
+import 'package:anime_app_demo/features/home/presentation/view/body_view/sections/anime_list_section.dart'
+    show AnimeListSection;
 import 'package:anime_app_demo/features/home/presentation/view/body_view/sections/category_section.dart';
+import 'package:anime_app_demo/features/home/presentation/widgets/characters_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,6 +24,7 @@ class HomeBodyView extends StatelessWidget {
 
             const SliverToBoxAdapter(child: CharacterSectionHeader()),
 
+            const CharactersList(),
           ],
         ),
       ],
@@ -61,7 +64,6 @@ class HeaderSection extends StatelessWidget {
   }
 }
 
-
 class CharacterSectionHeader extends StatelessWidget {
   const CharacterSectionHeader({super.key});
 
@@ -76,4 +78,3 @@ class CharacterSectionHeader extends StatelessWidget {
     );
   }
 }
-

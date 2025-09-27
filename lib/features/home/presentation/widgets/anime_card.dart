@@ -17,7 +17,7 @@ class AnimeCard extends StatelessWidget {
         children: [
           /// البوستر
           SizedBox(
-            height: 260, 
+            height: 260,
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
@@ -29,31 +29,33 @@ class AnimeCard extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(
-                      anime.poster,
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image.asset(anime.poster, fit: BoxFit.fill),
                   ),
                   Positioned(
                     top: 8,
-                    right: 8,
+                    right: 22,
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 4),
+                        horizontal: 5,
+                        vertical: 2,
+                      ),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.7),
+                        color: AppColors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Icon(Icons.star,
-                              color: Colors.amber, size: 16),
+                          const Icon(
+                            Icons.star,
+                            color: AppColors.lightText,
+                            size: 16,
+                          ),
                           const SizedBox(width: 4),
                           Text(
                             anime.rating.toStringAsFixed(1),
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                             ),
@@ -71,7 +73,7 @@ class AnimeCard extends StatelessWidget {
 
           CustomTextWidget.subtitleBold(anime.title),
           const SizedBox(height: 4),
-          CustomTextWidget.small("Mystery" ,color: AppColors.greyText,),
+          CustomTextWidget.small(anime.genre, color: AppColors.greyText),
         ],
       ),
     );

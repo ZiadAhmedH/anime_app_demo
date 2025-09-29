@@ -1,35 +1,71 @@
 import 'package:anime_app_demo/core/widgets/text_widget.dart';
-import 'package:anime_app_demo/features/home/domain/entities/character.dart';
+import 'package:anime_app_demo/features/home/presentation/cubit/anime_cubit.dart';
+import 'package:anime_app_demo/features/home/presentation/cubit/anime_state.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/character_card.dart';
+import 'package:anime_app_demo/features/home/presentation/widgets/loading_anime_widget.dart';
+import 'package:anime_app_demo/features/home/presentation/widgets/error_anime_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CharactersList extends StatelessWidget {
-  const CharactersList({super.key});
+class CharactersListSection extends StatelessWidget {
+  const CharactersListSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-   
-
-    return SliverToBoxAdapter(
-      child: Container(
-        height: 200,
-        padding: const EdgeInsets.only(left: 14),
-        child: characters.isEmpty
-            ? _buildEmptyState()
-            : ListView.builder(
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(),
-                itemCount: characters.length,
-                itemBuilder: (context, index) {
-                  return CharacterCard(character: characters[index]);
-                },
-              ),
-      ),
+    return BlocBuilder<AnimeCubit, AnimeState>(
+      builder: (context, state) {
+        return SliverToBoxAdapter(
+          child: SizedBox(
+            height: 220,
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 600),
+              switchInCurve: Curves.easeInOut,
+              switchOutCurve: Curves.easeInOut,
+              transitionBuilder: (child, animation) =>
+                  FadeTransition(opacity: animation, child: child),
+              child: _buildChild(state),
+            ),
+          ),
+        );
+      },
     );
+  }
+
+  Widget _buildChild(AnimeState state) {
+    if (state is CharactersLoading) {
+      return const Center(
+        key: ValueKey("loading"),
+        child: AnimatedLoading(),
+      );
+    } else if (state is CharactersLoaded) {
+      if (state.characters == null || state.characters!.isEmpty) {
+        return _buildEmptyState();
+      }
+      return ListView.builder(
+        key: const ValueKey("loaded"),
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        itemCount: state.characters!.length,
+        itemBuilder: (context, index) {
+          return CharacterCard(character: state.characters![index]);
+        },
+      );
+    } else if (state is CharactersError) {
+      return Center(
+        key: const ValueKey("error"),
+        child: AnimatedError(message: state.message),
+      );
+    } else {
+      return const Center(
+        key: ValueKey("initial"),
+        child: Text("Fetch some characters ✨"),
+      );
+    }
   }
 
   Widget _buildEmptyState() {
     return Center(
+      key: const ValueKey("empty"),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

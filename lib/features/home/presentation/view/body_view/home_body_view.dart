@@ -24,7 +24,7 @@ class HomeBodyView extends StatelessWidget {
 
             const SliverToBoxAdapter(child: CharacterSectionHeader()),
 
-            const CharactersList(),
+            const CharactersListSection(),
           ],
         ),
       ],

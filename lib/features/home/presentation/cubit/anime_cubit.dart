@@ -2,6 +2,7 @@
 import 'package:anime_app_demo/core/errors/failures.dart';
 import 'package:anime_app_demo/core/services/logger.dart';
 import 'package:anime_app_demo/features/home/domain/entities/anime.dart';
+import 'package:anime_app_demo/features/home/domain/entities/character.dart';
 import 'package:anime_app_demo/features/home/domain/usecases/get_popular_animes.dart';
 import 'package:anime_app_demo/features/home/domain/usecases/get_top_character.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,17 +34,17 @@ class AnimeCubit extends Cubit<AnimeState> {
   }
 
   Future<void> fetchTopCharacters() async {
-    emit(const AnimeLoading());
+    emit(const CharactersLoading());
          await Future.delayed(const Duration(seconds: 2));
 
-    final Either<Failure, List<Anime>> result = await getPopularAnimes();
+    final Either<Failure, List<Character>> result = await getTopCharacter();
 
     result.fold((failure) {
       AppLogger.error('Error fetching popular animes: ${failure.message}');
       emit(AnimeError(failure.message ?? 'Unknown error occurred'));
-    }, (animes) {
-      AppLogger.debug('Fetched ${animes.toList()} popular animes');
-      emit(AnimeLoaded(animes));
+    }, (chars) {
+      AppLogger.debug('Fetched ${chars.toList()} popular animes');
+      emit(CharactersLoaded(chars));
     }
     
     );

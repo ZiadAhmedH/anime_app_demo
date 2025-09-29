@@ -38,7 +38,7 @@ class CustomTextWidget extends StatelessWidget {
        fontWeight = FontWeight.bold;
 
 
-  const CustomTextWidget.subtitle16(
+  const CustomTextWidget.subtitle(
     this.text, {
     super.key,
     this.color,
@@ -55,7 +55,17 @@ class CustomTextWidget extends StatelessWidget {
     this.textAlign,
     this.maxLines,
   }) : fontSize = 16,
-       fontWeight = FontWeight.bold;     
+       fontWeight = FontWeight.bold; 
+
+
+  const CustomTextWidget.subtitleSemiBold(
+    this.text, {
+    super.key,
+    this.color,
+    this.textAlign,
+    this.maxLines,
+  }) : fontSize = 16,
+       fontWeight = FontWeight.w600;         
 
   const CustomTextWidget.body(
     this.text, {
@@ -65,6 +75,16 @@ class CustomTextWidget extends StatelessWidget {
     this.maxLines,
   }) : fontSize = 14,
        fontWeight = FontWeight.normal;
+
+
+  const CustomTextWidget.bodySemiBold(
+    this.text, {
+    super.key,
+    this.color,
+    this.textAlign,
+    this.maxLines,
+  }) : fontSize = 14,
+       fontWeight = FontWeight.w600;     
 
   const CustomTextWidget.small(
     this.text, {
@@ -87,7 +107,7 @@ class CustomTextWidget extends StatelessWidget {
       ),
       textAlign: textAlign,
       maxLines: maxLines,
-      overflow: maxLines != null ? TextOverflow.ellipsis : null,
+      
     );
   }
 }

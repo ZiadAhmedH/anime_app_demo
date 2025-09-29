@@ -49,21 +49,28 @@ class AnimeLocalDataSourceImpl implements AnimeLocalDataSource {
   Future<List<ChaeracterModel>> getTopAnimeCharacters() async {
       return [
         ChaeracterModel(
-          animeName: "Gon Freecss",
+          animeName: "Hunter x Hunter",
           imageUrl: "assets/chars/gon.png",
-          name: "L",
+          name: "Gon Freecss",
           role: "Main Protagonist",
         ),
         ChaeracterModel(
            animeName: "Naruto",
-          imageUrl: "assets/characters/naruto.png",
+          imageUrl: "assets/chars/naruto.png",
           name: "Naruto Uzumaki",
           role: "Main Protagonist",
         ),
         ChaeracterModel(
           animeName: "One Piece",
-          imageUrl: "assets/characters/luffy.png",
-          name: "Monkey D. Luffy",
+          imageUrl: "assets/chars/loffy.png",
+          name: "Luffy",
+          role: "Main Protagonist",
+        ),
+
+        ChaeracterModel(
+          animeName: "Detective Conan",
+          imageUrl: "assets/chars/conan.png",
+          name: "Conan Edogawa",
           role: "Main Protagonist",
         ),
       ];

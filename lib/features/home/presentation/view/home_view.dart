@@ -1,9 +1,11 @@
 import 'package:anime_app_demo/core/di.dart';
 import 'package:anime_app_demo/core/utils/app_colors.dart';
-import 'package:anime_app_demo/features/home/presentation/cubit/anime_cubit.dart';
+import 'package:anime_app_demo/features/home/presentation/cubit/anime/anime_cubit.dart';
 import 'package:anime_app_demo/features/home/presentation/view/body_view/home_body_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubit/characters/char_cubit.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -20,8 +22,13 @@ class HomeView extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: BlocProvider(
-          create: (context) => sl<AnimeCubit>()..fetchPopularAnimes()..fetchTopCharacters(),
+        body: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => sl<AnimeCubit>()..fetchPopularAnimes(),
+            ),
+            BlocProvider(create: (context) => sl<CharCubit>()..fetchTopCharacters()),
+          ],
           child: HomeBodyView(),
         ),
       ),

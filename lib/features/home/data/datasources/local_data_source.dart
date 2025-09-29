@@ -49,8 +49,8 @@ class AnimeLocalDataSourceImpl implements AnimeLocalDataSource {
   Future<List<ChaeracterModel>> getTopAnimeCharacters() async {
       return [
         ChaeracterModel(
-          animeName: "Death Note",
-          imageUrl: "assets/characters/l.png",
+          animeName: "Gon Freecss",
+          imageUrl: "assets/chars/gon.png",
           name: "L",
           role: "Main Protagonist",
         ),

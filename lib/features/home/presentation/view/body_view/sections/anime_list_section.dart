@@ -1,6 +1,6 @@
 
-import 'package:anime_app_demo/features/home/presentation/cubit/anime_cubit.dart';
-import 'package:anime_app_demo/features/home/presentation/cubit/anime_state.dart';
+import 'package:anime_app_demo/features/home/presentation/cubit/anime/anime_cubit.dart';
+import 'package:anime_app_demo/features/home/presentation/cubit/anime/anime_state.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/anime_card.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/error_anime_widget.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/loading_anime_widget.dart';

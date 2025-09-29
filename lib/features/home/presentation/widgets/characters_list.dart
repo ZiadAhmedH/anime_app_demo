@@ -1,6 +1,6 @@
 import 'package:anime_app_demo/core/widgets/text_widget.dart';
-import 'package:anime_app_demo/features/home/presentation/cubit/anime_cubit.dart';
-import 'package:anime_app_demo/features/home/presentation/cubit/anime_state.dart';
+import 'package:anime_app_demo/features/home/presentation/cubit/characters/char_cubit.dart';
+import 'package:anime_app_demo/features/home/presentation/cubit/characters/char_state.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/character_card.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/loading_anime_widget.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/error_anime_widget.dart';
@@ -12,7 +12,7 @@ class CharactersListSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AnimeCubit, AnimeState>(
+    return BlocBuilder<CharCubit, CharState>(
       builder: (context, state) {
         return SliverToBoxAdapter(
           child: SizedBox(
@@ -31,26 +31,26 @@ class CharactersListSection extends StatelessWidget {
     );
   }
 
-  Widget _buildChild(AnimeState state) {
-    if (state is CharactersLoading) {
+  Widget _buildChild(CharState state) {
+    if (state is CharLoading) {
       return const Center(
         key: ValueKey("loading"),
         child: AnimatedLoading(),
       );
-    } else if (state is CharactersLoaded) {
-      if (state.characters == null || state.characters!.isEmpty) {
+    } else if (state is CharLoaded) {
+      if (state.characters.isEmpty) {
         return _buildEmptyState();
       }
       return ListView.builder(
         key: const ValueKey("loaded"),
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
-        itemCount: state.characters!.length,
+        itemCount: state.characters.length,
         itemBuilder: (context, index) {
-          return CharacterCard(character: state.characters![index]);
+          return CharacterCard(character: state.characters[index]);
         },
       );
-    } else if (state is CharactersError) {
+    } else if (state is CharError) {
       return Center(
         key: const ValueKey("error"),
         child: AnimatedError(message: state.message),

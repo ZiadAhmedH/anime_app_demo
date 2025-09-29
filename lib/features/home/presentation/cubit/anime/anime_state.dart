@@ -1,5 +1,4 @@
 import 'package:anime_app_demo/features/home/domain/entities/anime.dart';
-import 'package:anime_app_demo/features/home/domain/entities/character.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class AnimeState extends Equatable {
@@ -33,28 +32,3 @@ class AnimeError extends AnimeState {
   List<Object?> get props => [message];
 }
 
-
-// for characters
-
-// loading state is same
-
-class CharactersLoading extends AnimeState {
-  const CharactersLoading();
-}
-
-class CharactersLoaded extends AnimeState {
-  final List<Character>? characters;
-  const CharactersLoaded(this.characters);
-
-  @override
-  List<Object?> get props => [characters];
-}
-
-
-class CharactersError extends AnimeState {
-  final String message;
-  const CharactersError(this.message);
-
-  @override
-  List<Object?> get props => [message];
-}

@@ -4,6 +4,7 @@ import 'package:anime_app_demo/features/home/presentation/cubit/characters/char_
 import 'package:anime_app_demo/features/home/presentation/widgets/character_card.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/loading_anime_widget.dart';
 import 'package:anime_app_demo/features/home/presentation/widgets/error_anime_widget.dart';
+import 'package:anime_app_demo/features/home/presentation/widgets/loading_char_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,7 +36,7 @@ class CharactersListSection extends StatelessWidget {
     if (state is CharLoading) {
       return const Center(
         key: ValueKey("loading"),
-        child: AnimatedLoading(),
+        child: CharacterLoadingList(),
       );
     } else if (state is CharLoaded) {
       if (state.characters.isEmpty) {

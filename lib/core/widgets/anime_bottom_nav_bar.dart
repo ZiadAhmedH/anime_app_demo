@@ -1,5 +1,6 @@
 import 'package:anime_app_demo/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class AnimeBottomNavBar extends StatefulWidget {
   const AnimeBottomNavBar({super.key});
@@ -13,31 +14,25 @@ class _AnimeBottomNavBarState extends State<AnimeBottomNavBar> {
 
   final List<NavBarItem> _navItems = [
     NavBarItem(
-      icon: Image.asset("assets/ojects/home_icon.png"),
-      activeIcon: Image.asset("assets/ojects/home_icon.png"),
+      iconPath: "assets/objects/home-2.svg",
       label: 'Home',
     ),
     NavBarItem(
-      icon: Image.asset("assets/ojects/Group.png"),
-      activeIcon: Image.asset("assets/ojects/Group.png"),
+      iconPath: "assets/objects/Vector.svg",
       label: 'Bookmark',
     ),
     NavBarItem(
-      icon:Image.asset("assets/ojects/search-normal.png"), 
-      activeIcon:Image.asset("assets/ojects/search.png"),
-      label: 'search',
+      iconPath: "assets/objects/search-normal.svg",
+      label: 'Search',
     ),
     NavBarItem(
-      icon: Image.asset("assets/ojects/global.png"),
-      activeIcon: Image.asset("assets/ojects/global.png"),
+      iconPath: "assets/objects/Group.svg",
       label: 'Global',
     ),
-
     NavBarItem(
-      icon: Image.asset("assets/ojects/setting.png"),
-      activeIcon: Image.asset("assets/ojects/setting.png"),
-      label: 'settings',
-    )
+      iconPath: "assets/objects/setting.svg",
+      label: 'Settings',
+    ),
   ];
 
   void _onItemTapped(int index) {
@@ -45,24 +40,7 @@ class _AnimeBottomNavBarState extends State<AnimeBottomNavBar> {
       _selectedIndex = index;
     });
 
-    // TODO: Handle navigation based on index
-    switch (index) {
-      case 0:
-        // Navigate to Home
-        break;
-      case 1:
-        // Navigate to Search
-        break;
-      case 2:
-        // Navigate to Watchlist
-        break;
-      case 3:
-        // Navigate to Profile  
-        break;
-      case 4:
-        // Navigate to Profile
-        break;  
-    }
+    // TODO: Handle navigation
   }
 
   @override
@@ -70,7 +48,7 @@ class _AnimeBottomNavBarState extends State<AnimeBottomNavBar> {
     return Container(
       height: 80,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.transparent,
         boxShadow: [
           BoxShadow(
             color: AppColors.purple.withOpacity(0.2),
@@ -92,24 +70,27 @@ class _AnimeBottomNavBarState extends State<AnimeBottomNavBar> {
               return GestureDetector(
                 onTap: () => _onItemTapped(index),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 500),
                   curve: Curves.easeInOut,
                   padding: EdgeInsets.symmetric(
-                    horizontal: isSelected ? 20 : 12,
-                    vertical: 8,
+                    horizontal: isSelected ? 14 : 12,
+                    vertical: 7,
                   ),
                   decoration: BoxDecoration(
                     color: isSelected
                         ? AppColors.lightText
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                    
-                        isSelected ? item.activeIcon : item.icon,
-                       
+                      SvgPicture.asset(
+                        item.iconPath,
+                        height: 20,
+                        width: 20,
+                        color: isSelected ? Colors.white : Colors.grey,
+                      ),
                       if (isSelected) ...[
                         const SizedBox(width: 8),
                         Text(
@@ -135,13 +116,11 @@ class _AnimeBottomNavBarState extends State<AnimeBottomNavBar> {
 }
 
 class NavBarItem {
-  final Widget icon;
-  final Widget activeIcon;
+  final String iconPath;
   final String label;
 
   NavBarItem({
-    required this.icon,
-    required this.activeIcon,
+    required this.iconPath,
     required this.label,
   });
 }

@@ -7,8 +7,6 @@ class AppColors {
     static const Color lightPurple = Color.fromRGBO(240, 240, 255, 1);
     static const Color white = Color.fromRGBO(255, 255, 255, 1);
 
-
-
     // fonts 
 
     static const Color darkText = Color(0xFF18153F);
@@ -20,6 +18,8 @@ class AppColors {
     static const Color fadeColor = Color.fromRGBO(75,40,77, 1);
     static const Color lightContentBackground = Color.fromRGBO(217, 217, 217, 0.24);
     
+    static const Color transparent = Colors.transparent;
 
+    static const Color continers = Color(0xFF18153F);
     
 }

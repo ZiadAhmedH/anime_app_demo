@@ -1,3 +1,4 @@
+import 'package:anime_app_demo/features/details/presentation/view/detail_view.dart';
 import 'package:anime_app_demo/features/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Raleway",
       ),
       title: 'Anime App',
-      home:  HomeView(),
+      home:  DetailView(),
     );
   }
 }

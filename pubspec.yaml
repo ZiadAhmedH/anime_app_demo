@@ -31,6 +31,7 @@ flutter:
     - assets/chars/
     - assets/posters/
     - assets/objects/
+    - assets/details/
 
 #font Raleway
 

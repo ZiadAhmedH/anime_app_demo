@@ -15,7 +15,11 @@ class AppColors {
     static const Color lightText = Color(0xFF5436F8);
     static const Color greyText = Color(0xFFA9A9A9);
 
-  // 
+  // details screen colors
+    static const Color contentBackground = Color.fromRGBO(44,30,81 ,1 );
+    static const Color fadeColor = Color.fromRGBO(75,40,77, 1);
+    static const Color lightContentBackground = Color.fromRGBO(217, 217, 217, 0.24);
     
+
     
 }

@@ -1,6 +1,7 @@
 import 'package:anime_app_demo/core/utils/app_colors.dart';
 import 'package:anime_app_demo/core/widgets/text_widget.dart';
-import 'package:anime_app_demo/features/details/presentation/widgets/genre_widget.dart' show buildGenreTag;
+import 'package:anime_app_demo/features/details/presentation/widgets/genre_widget.dart'
+    show buildGenreTag;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -54,7 +55,7 @@ class DetailBodyView extends StatelessWidget {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 80), 
+                            padding: const EdgeInsets.only(bottom: 80),
                             // 👆 leave space for bottom container
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -80,13 +81,25 @@ class DetailBodyView extends StatelessWidget {
                                 ),
                                 // stats
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                  ),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
                                     children: [
-                                      _buildStat("assets/details/eye.svg", "2.3M views"),
-                                      _buildStat("assets/details/HandsClapping.svg", "2K clap"),
-                                      _buildStat("assets/details/solid_movie.svg", "4 Seasons"),
+                                      _buildStat(
+                                        "assets/details/eye.svg",
+                                        "2.3M views",
+                                      ),
+                                      _buildStat(
+                                        "assets/details/HandsClapping.svg",
+                                        "2K clap",
+                                      ),
+                                      _buildStat(
+                                        "assets/details/solid_movie.svg",
+                                        "4 Seasons",
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -99,9 +112,12 @@ class DetailBodyView extends StatelessWidget {
                                 ),
                                 // description
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                  ),
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       SvgPicture.asset(
                                         "assets/details/fl.svg",
@@ -114,7 +130,6 @@ class DetailBodyView extends StatelessWidget {
                                           "Demon Slayer: Kimetsu no Yaiba follows Tanjiro, a kind-hearted boy who becomes a demon slayer after his family is slaughtered and his sister is turned into a demon. Experience breathtaking battles, stunning animation, and an emotional journey of courage and hope.",
                                           color: AppColors.white,
                                           textAlign: TextAlign.start,
-                                          
                                         ),
                                       ),
                                     ],
@@ -166,35 +181,33 @@ class DetailBodyView extends StatelessWidget {
             right: 0,
             child: Container(
               height: 80,
-              decoration: BoxDecoration(
-                color: AppColors.continers,
-              ),
+              decoration: BoxDecoration(color: AppColors.continers),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   // Watch Now Button
                   Row(
                     children: [
-
-                        
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.buttonBackground,
-                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 30,
+                            vertical: 12,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
                         child: Row(
                           children: [
-
-                             SvgPicture.asset(
+                            SvgPicture.asset(
                               "assets/details/play-bold.svg",
                               height: 22,
                               width: 22,
                             ),
-                            const SizedBox(width: 10),  
+                            const SizedBox(width: 10),
                             CustomTextWidget.subtitleBold(
                               "preview",
                               color: AppColors.white,
@@ -202,36 +215,33 @@ class DetailBodyView extends StatelessWidget {
                           ],
                         ),
                       ),
-                
 
                       const SizedBox(width: 20),
 
-
-
-
-                      
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.darkPurple,
-                          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 30,
+                            vertical: 12,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
                         child: Row(
                           children: [
-
-                             SvgPicture.asset(
+                            SvgPicture.asset(
                               "assets/details/eye.svg",
                               height: 20,
                               width: 20,
                               colorFilter: const ColorFilter.mode(
                                 AppColors.white,
                                 BlendMode.srcIn,
-                              ), 
+                              ),
                             ),
-                            const SizedBox(width: 10),  
+                            const SizedBox(width: 10),
                             CustomTextWidget.subtitleBold(
                               "Watch Now",
                               color: AppColors.white,
@@ -241,8 +251,6 @@ class DetailBodyView extends StatelessWidget {
                       ),
                     ],
                   ),
-
-                 
                 ],
               ),
             ),

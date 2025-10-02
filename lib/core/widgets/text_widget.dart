@@ -47,6 +47,18 @@ class CustomTextWidget extends StatelessWidget {
   }) : fontSize = 16,
        fontWeight = FontWeight.w600;
 
+   const CustomTextWidget.subtitleNormal(
+    this.text, {
+    super.key,
+    this.color,
+    this.textAlign,
+    this.maxLines,
+  }) : fontSize = 16,
+       fontWeight = FontWeight.w400;
+
+  
+  
+
 
   const CustomTextWidget.subtitleBold(
     this.text, {

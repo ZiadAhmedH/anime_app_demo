@@ -21,5 +21,7 @@ class AppColors {
     static const Color transparent = Colors.transparent;
 
     static const Color continers = Color(0xFF18153F);
+
+    static const Color buttonBackground = Color.fromRGBO(141, 137, 152, 0.4);
     
 }

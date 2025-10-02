@@ -219,7 +219,9 @@ class DetailBodyView extends StatelessWidget {
                       const SizedBox(width: 20),
 
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                         // Navidator.
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.darkPurple,
                           padding: const EdgeInsets.symmetric(

@@ -10,7 +10,6 @@ class PlanBackgroundSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Decorative star
         Positioned(
           top: 100,
           left: 280,

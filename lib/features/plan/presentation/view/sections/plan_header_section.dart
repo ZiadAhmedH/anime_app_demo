@@ -1,3 +1,4 @@
+import 'package:anime_app_demo/core/router/navigation_helper.dart';
 import 'package:anime_app_demo/core/utils/app_colors.dart';
 import 'package:anime_app_demo/core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
@@ -29,10 +30,10 @@ class PlanHeaderSection extends StatelessWidget {
                   color: Colors.black87,
                   size: 20,
                 ),
-                onPressed: () => Navigator.pop(context),
+                onPressed: () => NavigationHelper.goBack(context),
               ),
             ),
-            const SizedBox(width: 25),
+            const SizedBox(width: 20),
           ],
         ),
       ],

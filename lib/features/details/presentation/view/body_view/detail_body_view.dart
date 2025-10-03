@@ -1,3 +1,4 @@
+import 'package:anime_app_demo/core/router/navigation_helper.dart';
 import 'package:anime_app_demo/core/utils/app_colors.dart';
 import 'package:anime_app_demo/core/widgets/text_widget.dart';
 import 'package:anime_app_demo/features/details/presentation/widgets/genre_widget.dart'
@@ -220,7 +221,9 @@ class DetailBodyView extends StatelessWidget {
 
                       ElevatedButton(
                         onPressed: () {
-                         // Navidator.
+                           
+                            NavigationHelper.pushToPlan(context);
+
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.darkPurple,

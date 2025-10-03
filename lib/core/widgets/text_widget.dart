@@ -70,6 +70,16 @@ class CustomTextWidget extends StatelessWidget {
        fontWeight = FontWeight.bold; 
 
 
+   const  CustomTextWidget.subtitlew700(
+    this.text, {
+    super.key,
+    this.color,
+    this.textAlign,
+    this.maxLines,
+  }) : fontSize = 16,
+       fontWeight = FontWeight.w700;      
+
+
   const CustomTextWidget.subtitleSemiBold(
     this.text, {
     super.key,
@@ -106,6 +116,16 @@ class CustomTextWidget extends StatelessWidget {
     this.maxLines,
   }) : fontSize = 12,
        fontWeight = FontWeight.normal;
+  
+  const CustomTextWidget.smallSemiBold(
+    this.text, {
+    super.key,
+    this.color,
+    this.textAlign,
+    this.maxLines,
+  }) : fontSize = 14,
+        fontWeight = FontWeight.bold;
+
 
   @override
   Widget build(BuildContext context) {

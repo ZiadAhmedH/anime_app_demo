@@ -14,8 +14,8 @@ class PlanHeroSection extends StatelessWidget {
         SizedBox(
           height: 200,
           width: 200,
-          child: SvgPicture.asset(
-            "assets/objects/Rocket Boy 1.svg",
+          child: Image.asset(
+            "assets/objects/Rocket Boy 1.png",
             fit: BoxFit.fill,
           ),
         ),

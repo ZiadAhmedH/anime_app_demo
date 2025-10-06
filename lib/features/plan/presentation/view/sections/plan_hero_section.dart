@@ -1,7 +1,6 @@
 import 'package:anime_app_demo/core/utils/app_colors.dart';
 import 'package:anime_app_demo/core/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PlanHeroSection extends StatelessWidget {
   const PlanHeroSection({super.key});
